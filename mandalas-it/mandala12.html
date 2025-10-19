@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - The Feathered Serpent of Quetzalcóatl</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="WonderColoring Logo" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Sparking Imagination, One Shade at a Time</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Back to Collection
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">The Feathered Serpent of Quetzalcóatl</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala12.webp" alt="Colored Feathered Serpent of Quetzalcóatl Mandala" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Play Inspiring Music</span>
+                </button>
+                <p class="audio-description">Gentle music with pre-Hispanic flute and wind sounds to unite your earthly body with your celestial spirit.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala12-relax.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">The Soul of This Mandala</h2>
+            <p class="soul-text">At the heart of Mesoamerica—from the Olmecs to the Mexica—lived Quetzalcóatl, the Feathered Serpent. His name means “precious feathered serpent”: serpent (earth, body, instinct) and quetzal feathers (sky, spirit, vision). Quetzalcóatl wasn’t a distant god. He was the civilizing teacher who brought agriculture, calendars, and art—and forbade human sacrifice. To the Toltecs, he was the ideal priest-king: wise, just, and devoted to life.</p>
+            
+            <p class="invitation-text">Place one hand on your belly, the other on your crown. Breathe deeply and say softly: <strong>“I am earth that dreams. I am sky that walks.”</strong> Choose one color for your body (green, red, brown). Another for your spirit (blue, gold, violet). Let them intertwine like feathers and scales. Don’t deny any part of yourself. Everything within you is sacred.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Back to Collection</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pause Inspiring Music';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Play Inspiring Music';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio not available';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

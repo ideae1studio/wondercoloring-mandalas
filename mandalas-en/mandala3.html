@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - The Protective Eye of Horus</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="WonderColoring Logo" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Sparking Imagination, One Shade at a Time</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Back to Collection
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">The Protective Eye of Horus</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala3.webp" alt="Colored Eye of Horus Mandala" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Play Inspiring Music</span>
+                </button>
+                <p class="audio-description">Gentle music with Egyptian flute and quartz bowls to activate your inner vision and spiritual protection.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala3-relax.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">The Soul of This Mandala</h2>
+            <p class="soul-text">In ancient Egypt, the Eye of Horus—known as <em>Udyat</em>—was more than a symbol; it was an act of faith in restoration. According to myth, Horus lost his left eye in battle with Set, but Thoth reassembled it piece by piece, making it even more powerful. Priests used it in healing rituals and funerary amulets. Each part represented a sacred fraction—and together, they summed to more than 100%, symbolizing that wholeness restored is greater than what was lost.</p>
+            
+            <p class="invitation-text">Place a hand between your eyebrows. Breathe deeply and say silently: <strong>“May my vision be clear. May my heart be protected.”</strong> As you color, imagine each stroke returning a piece of yourself you thought was gone. Don’t fear what you see. Now, you see with healed eyes.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Back to Collection</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pause Inspiring Music';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Play Inspiring Music';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio not available';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

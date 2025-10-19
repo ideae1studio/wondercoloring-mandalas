@@ -1,0 +1,668 @@
+/* ======================================================= */
+/* 1. ELEGANT COLOR PALETTE - ACCESIBLE & HARMONIOUS       */
+/* ======================================================= */
+:root {
+    --color-base: #F8F5F0;        /* Light Cream/Off-White */
+    --color-beige: #e9dcd3;       /* Section Backgrounds */
+    --color-pink-dust: #e7c4c8;   /* Soft Accents / Hover */
+    --color-taupe: #A68A85;       /* Secondary Text / Borders */
+    --color-terracotta: #a12047;  /* Main Action / Primary Title */
+    --color-brown: #460127;       /* Main Body Text / Heading Contrast */
+    --color-gold: #D4AF37;        /* Luxury Details / Borders */
+}
+
+/* ======================================================= */
+/* 2. RESET & GLOBAL STYLES                                */
+/* ======================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--color-base);
+    color: var(--color-brown);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: var(--color-gold);
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Layout */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ======================================================= */
+/* 3. NAVBAR & HEADER STYLES                               */
+/* ======================================================= */
+.navbar {
+    background-color: var(--color-brown);
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-wrapper {
+    border: 3px solid var(--color-gold);
+    border-radius: 8px;
+    padding: 2px;
+    background-color: var(--color-base);
+    flex-shrink: 0;
+}
+
+.site-logo {
+    max-height: 70px;
+    width: auto;
+    display: block;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.brand-text h1 {
+    font-size: 2.2em;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.slogan {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-pink-dust);
+    margin: 4px 0 0 0;
+}
+
+.language-switcher {
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.language-switcher:hover {
+    background-color: var(--color-gold);
+    color: var(--color-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================================= */
+/* 4. INDIVIDUAL MANDALA PAGE STYLES                       */
+/* ======================================================= */
+.mandala-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--color-pink-dust);
+}
+
+.mandala-title {
+    color: var(--color-terracotta);
+    font-size: 2.4em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.mandala-image-container {
+    text-align: center;
+    margin: 30px 0;
+    border: 4px solid var(--color-gold);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mandala-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ======================================================= */
+/* 5. AUDIO CONTROLS - MEJORADOS Y ATRACTIVOS             */
+/* ======================================================= */
+.audio-section {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--color-beige);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.audio-controls {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.audio-button {
+    background: var(--color-terracotta);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(161, 32, 71, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 320px;
+    margin-bottom: 15px;
+}
+
+.audio-button:hover:not(:disabled) {
+    background: var(--color-pink-dust);
+    color: var(--color-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(161, 32, 71, 0.5);
+}
+
+.audio-button.playing {
+    background: var(--color-gold);
+    color: var(--color-brown);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.audio-button.playing:hover {
+    background: #c9af37;
+    transform: translateY(-3px);
+}
+
+.audio-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.audio-description {
+    color: var(--color-taupe);
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ======================================================= */
+/* 6. MEANING SECTION - TEXTO EXPLICATIVO                 */
+/* ======================================================= */
+.meaning-section {
+    background-color: var(--color-beige);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.meaning-title {
+    color: var(--color-taupe);
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--color-pink-dust);
+    padding-bottom: 10px;
+}
+
+.soul-text, .invitation-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.invitation-text {
+    font-style: italic;
+    color: var(--color-terracotta);
+    padding: 15px;
+    background-color: rgba(229, 196, 200, 0.2);
+    border-left: 4px solid var(--color-terracotta);
+    border-radius: 0 8px 8px 0;
+}
+
+.back-to-home {
+    display: block;
+    text-align: center;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background-color: var(--color-base);
+    border: 2px solid var(--color-gold);
+    color: var(--color-brown);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    max-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: var(--color-pink-dust);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================================================= */
+/* 7. HERO SECTION - MANDALAS LANDING                      */
+/* ======================================================= */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    color: var(--color-terracotta);
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    font-size: 1.2em;
+    color: var(--color-brown);
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-terracotta);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(161, 32, 71, 0.3);
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: var(--color-pink-dust);
+    color: var(--color-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(161, 32, 71, 0.4);
+}
+
+.hero-image-container {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+    border: 5px solid var(--color-gold);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ======================================================= */
+/* 8. INFO SECTIONS & COLLECTION GRID                      */
+/* ======================================================= */
+.info-section {
+    background-color: var(--color-beige);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info-section h3 {
+    color: var(--color-taupe);
+    border-bottom: 2px solid var(--color-pink-dust);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+/* Collection Grid - Fully Responsive */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.grid-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: var(--color-base);
+    border: 1px solid var(--color-pink-dust);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 180px;
+    text-decoration: none;
+}
+
+.grid-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-terracotta);
+}
+
+.grid-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 2px solid var(--color-beige);
+    transition: transform 0.3s ease;
+}
+
+.grid-link:hover img {
+    transform: scale(1.03);
+}
+
+.grid-link h4 {
+    font-size: 0.95em;
+    color: var(--color-brown);
+    font-weight: 600;
+    margin: 0;
+}
+
+.special-link h4::before {
+    margin-right: 5px;
+}
+
+/* ======================================================= */
+/* 9. FUTURE COLLECTIONS PREVIEW                           */
+/* ======================================================= */
+.preview-reel-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.reel-card {
+    text-align: center;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.reel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.reel-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.reel-info {
+    padding: 15px 10px;
+}
+
+.reel-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+    color: var(--color-terracotta);
+}
+
+.soon-tag, .available-tag {
+    display: block;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 4px 0;
+    color: var(--color-gold);
+}
+
+.available-tag {
+    color: var(--color-terracotta);
+}
+
+/* ======================================================= */
+/* 10. LANGUAGE LANDING PAGE (INDEX.HTML)                  */
+/* ======================================================= */
+.language-landing {
+    background-color: var(--color-brown);
+    color: var(--color-base);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.landing-header {
+    width: 100%;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.main-heading {
+    color: var(--color-gold);
+    font-size: 2.5em;
+    margin: 10px 0 5px;
+}
+
+.main-slogan {
+    font-size: 1.1em;
+    color: var(--color-taupe);
+    margin: 0 0 30px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 650px;
+    width: 90%;
+    padding: 20px;
+}
+
+.lang-card {
+    background-color: var(--color-base);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 15px 10px;
+    color: var(--color-brown);
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+.lang-card:hover {
+    background-color: var(--color-pink-dust);
+    border-color: var(--color-terracotta);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.flag {
+    border: 3px solid var(--color-terracotta);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 8px;
+    padding: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.flag-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.footer-credit {
+    margin-top: 50px;
+    color: var(--color-taupe);
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* ======================================================= */
+/* 11. FOOTER                                              */
+/* ======================================================= */
+footer {
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.8em;
+    color: var(--color-taupe);
+    margin-top: 50px;
+}
+
+/* ======================================================= */
+/* 12. RESPONSIVE DESIGN - MOBILE OPTIMIZATION             */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .brand-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .brand-text h1 {
+        font-size: 1.8em;
+    }
+    
+    .hero-title, .mandala-title {
+        font-size: 2.0em;
+    }
+    
+    .hero-subtitle, .soul-text, .invitation-text {
+        font-size: 1.0em;
+        padding: 0 10px;
+    }
+    
+    .collection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+    
+    .grid-link {
+        padding: 10px;
+        max-width: 150px;
+    }
+    
+    .preview-reel-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    
+    .audio-button {
+        padding: 14px 30px;
+        font-size: 1.2em;
+        min-width: 280px;
+    }
+    
+    .mandala-image-container {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+    
+    .hero-title, .mandala-title {
+        font-size: 1.8em;
+    }
+    
+    .collection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+    
+    .lang-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 15px;
+    }
+    
+    .flag {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .grid-link h4 {
+        font-size: 0.85em;
+    }
+    
+    .audio-button {
+        min-width: 250px;
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Cóndor Mensajero del Cielo</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Cóndor Mensajero del Cielo</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala20.webp" alt="Mandala Cóndor Mensajero del Cielo coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con quena andina y sonidos de viento de altura para activar tu visión elevada y conexión con el cielo sagrado.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala20-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">Para los pueblos originarios de los Andes —desde los Quechua y Aymara hasta los antiguos Incas— el cóndor (<em>Kuntur</em>) no era un simple ave: era una deidad voladora, símbolo de visión, libertad y conexión con los Apus (los espíritus de las montañas). Se creía que, al volar a más de 5,000 metros, rozaba el reino de Hanan Pacha (el mundo superior), donde residen los dioses del sol, la luna y las estrellas.</p>
+            
+            <p class="invitation-text">Siéntate con la espalda recta, como si tus hombros fueran alas. Respira profundamente y repite en silencio: <strong>“Que mi visión sea clara. Que mi vuelo sea libre.”</strong> Elige colores que representen tu cielo (blanco, azul, dorado) y tu tierra (marrón, rojo, verde). Y deja que se fundan en el cuerpo del cóndor. No temas volar alto. La Pachamama siempre te sostiene. Y el cielo siempre te guía.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

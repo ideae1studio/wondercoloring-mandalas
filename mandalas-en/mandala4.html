@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - The Triskel of the Three Worlds</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="WonderColoring Logo" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Sparking Imagination, One Shade at a Time</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Back to Collection
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">The Triskel of the Three Worlds</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala4.webp" alt="Colored Triskel of the Three Worlds Mandala" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Play Inspiring Music</span>
+                </button>
+                <p class="audio-description">Gentle music with Celtic harp and nature sounds to harmonize your three inner worlds: body, emotions, and spirit.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala4-relax.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">The Soul of This Mandala</h2>
+            <p class="soul-text">Carved into sacred stones over 2,500 years ago at Newgrange (Ireland), the triskel—three interwoven spirals—was the Celts’ most sacred symbol. To the druids, it represented sacred dynamism: life as a constant flow between complementary forces. In Celtic cosmology, the universe is woven from three interconnected realms: the Earthly, the Emotional (Sea), and the Spiritual (Sky). This mandala honors that holistic vision: balance isn’t stillness—it’s conscious dance.</p>
+            
+            <p class="invitation-text">Sit tall. Place one hand on your belly, another on your heart, and lift your gaze. Breathe and whisper: <strong>“May my inner worlds dance in harmony.”</strong> Choose three colors: one for your body, one for your emotions, one for your spirit. Let the spirals remind you: you don’t need to stop life to find peace. You only need to move with awareness.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Back to Collection</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pause Inspiring Music';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Play Inspiring Music';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio not available';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

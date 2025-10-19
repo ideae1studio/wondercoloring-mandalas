@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Yantra de Ganesha, Eliminador de Obstáculos</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Yantra de Ganesha, Eliminador de Obstáculos</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala18.webp" alt="Mandala Yantra de Ganesha coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con sitar indio y mantras de Ganesha para abrir caminos con sabiduría, alegría y propósito.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala18-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">En los templos de la India hace más de 2,000 años, antes de comenzar cualquier ritual, escritura, viaje o emprendimiento, se invocaba a Ganesha —el hijo de Shiva y Parvati— con una ofrenda de modak (dulce de arroz) y una flor de loto. Ganesha no es un dios lejano: es el amigo íntimo del buscador, el que elimina los obstáculos internos y externos con sabiduría, humor y compasión.</p>
+            
+            <p class="invitation-text">Antes de comenzar, coloca una pequeña ofrenda simbólica: una flor, un dulce, o simplemente una intención escrita. Respira y di en silencio: <strong>“Que mi camino se abra con sabiduría, alegría y propósito.”</strong> No busques perfección en los colores. Ganesha ama los corazones sinceros, no los trazos perfectos. Si te equivocas, ríe. Él también lo haría.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Ojo de Horus Protector</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Ojo de Horus Protector</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala3.webp" alt="Mandala Ojo de Horus coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con sonidos de flauta egipcia y cuencos de cuarzo para activar tu visión interior y protección espiritual.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala3-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">En el corazón del antiguo Egipto, el Ojo de Horus —conocido como <em>Udyat</em>— no era solo un símbolo: era un acto de fe en la restauración. Según el mito, Horus perdió su ojo izquierdo en una batalla contra Set, pero Thot lo reconstruyó pieza por pieza, devolviéndolo más poderoso. Los sacerdotes lo usaban en amuletos funerarios y rituales de sanación. Cada parte del ojo representaba una fracción matemática sagrada —y juntas, sumaban más del 100%, simbolizando que la totalidad restaurada es mayor que la original.</p>
+            
+            <p class="invitation-text">Coloca una mano sobre tu frente, entre las cejas. Respira profundamente y di en silencio: <strong>“Que mi visión sea clara. Que mi corazón esté protegido.”</strong> Mientras colores, imagina que cada trazo te devuelve una parte de ti que creías perdida. No temas mirar. Ahora ves con ojos sanos.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

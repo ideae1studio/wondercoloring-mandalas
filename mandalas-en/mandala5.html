@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - The Sumerian Tree of Life</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="WonderColoring Logo" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Sparking Imagination, One Shade at a Time</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Back to Collection
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">The Sumerian Tree of Life</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala5.webp" alt="Colored Sumerian Tree of Life Mandala" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Play Inspiring Music</span>
+                </button>
+                <p class="audio-description">Gentle music with ancient harp and Sumerian flute to connect with the ancestral wisdom of the Cosmic Tree.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala5-relax.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">The Soul of This Mandala</h2>
+            <p class="soul-text">Over 5,000 years ago, in the lands between the Tigris and Euphrates, the Sumerians carved a sacred image into cylinder seals: a tree with roots in the earth and branches touching the sky. They called it <em>Kiskanu</em>—the Cosmic Tree—and saw it as the axis of the universe, the channel through which divine energy flowed. In cuneiform tablets, the god Enki planted this tree in Eridu’s sacred garden so humans could access wisdom, healing, and symbolic immortality.</p>
+            
+            <p class="invitation-text">If you can, sit barefoot on the ground. Place your hands on your knees or the earth. Breathe deeply and say softly: <strong>“I am root and branch. I am earth and sky.”</strong> Begin with the roots: what do you need to heal from the past? Then the trunk: what supports you today? Finally, the crown: what dream do you offer the world? Let your colors flow like sacred sap.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Back to Collection</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pause Inspiring Music';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Play Inspiring Music';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio not available';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

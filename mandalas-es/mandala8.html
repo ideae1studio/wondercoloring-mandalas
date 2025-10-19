@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Sol de Inti, Luz Andina</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Sol de Inti, Luz Andina</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala8.webp" alt="Mandala Sol de Inti coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con quena andina y sonidos de campanas doradas para activar tu luz interior y conexión con el Sol sagrado.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala8-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">Para los pueblos andinos —desde los Incas hasta las comunidades Quechua y Aymara— el Sol no es solo una estrella: es Inti, el Padre Luminoso, fuente de vida, calor y justicia cósmica. En el Coricancha (Templo del Sol en Cusco), las paredes estaban recubiertas de oro para reflejar su gloria. Cada año, durante el Inti Raymi, se celebraba su regreso tras el solsticio, agradeciendo por las cosechas. Los gobernantes incas se llamaban “Hijos del Sol” y debían gobernar con generosidad, justicia y claridad —como el Sol, que da sin pedir nada a cambio.</p>
+            
+            <p class="invitation-text">Si es de día, abre una ventana y deja entrar la luz natural. Si es de noche, enciende una vela dorada o naranja. Coloca las manos sobre tu vientre y repite en silencio: <strong>“Soy hijo/a de la luz. Mi fuego merece arder.”</strong> Elige colores cálidos: dorado, rojo, naranja, amarillo. Cada rayo que colores es una parte de ti que decides dejar brillar sin pedir permiso. No temas tu intensidad. El mundo necesita tu luz.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

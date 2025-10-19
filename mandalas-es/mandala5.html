@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Árbol de la Vida Sumerio</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Árbol de la Vida Sumerio</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala5.webp" alt="Mandala Árbol de la Vida Sumerio coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con sonidos de arpa antigua y flauta sumeria para conectar con la sabiduría ancestral del Árbol Cósmico.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala5-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">Hace más de 5,000 años, en las llanuras entre los ríos Tigris y Éufrates, los sumerios tallaban en sellos cilíndricos una imagen sagrada: un árbol con raíces en la tierra y ramas que tocaban el cielo. Lo llamaban <em>Kiskanu</em> —el Árbol Cósmico— y lo consideraban el eje del universo, el canal por el que fluía la energía divina. En las tablillas cuneiformes, el dios Enki plantó este árbol en el jardín sagrado de Eridu para que los humanos accedieran al conocimiento y la sanación.</p>
+            
+            <p class="invitation-text">Siéntate con los pies descalzos si es posible. Lleva las manos al suelo o a tus rodillas. Respira profundamente y di en silencio: <strong>“Soy raíz y rama. Soy tierra y cielo.”</strong> Comienza por las raíces: ¿qué necesitas sanar del pasado? Luego el tronco: ¿qué te sostiene hoy? Finalmente, la copa: ¿qué sueño quieres ofrecer al mundo? Deja que los colores fluyan como savia sagrada.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

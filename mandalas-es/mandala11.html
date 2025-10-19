@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Yantra del Chakra Raíz</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Yantra del Chakra Raíz</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala11.webp" alt="Mandala Yantra del Chakra Raíz coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con tambores de tierra y frecuencias de 396 Hz para activar la seguridad, estabilidad y conexión con la tierra.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala11-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">Hace más de 2,500 años, en los antiguos templos de la India, los sabios tántricos desarrollaron los yantras: diagramas sagrados que actúan como mapas energéticos del cosmos y del cuerpo humano. El yantra del Muladhara (chakra raíz) era considerado la base de toda la espiritualidad: sin estabilidad en la tierra, no hay ascenso al cielo. Este chakra, ubicado en la base de la columna, se representa con un cuadrado rojo (tierra), un elefante (fuerza ancestral) y una flor de loto de cuatro pétalos (las cuatro direcciones, los cuatro pilares de la vida).</p>
+            
+            <p class="invitation-text">Siéntate con los pies descalzos en el suelo. Lleva las manos a la base de tu columna. Respira profundamente y repite en silencio: <strong>“Merezco estar aquí. Este mundo me sostiene.”</strong> Elige el rojo como color principal, pero no temas mezclarlo con marrones, negros o dorados: la seguridad también es rica, profunda y luminosa. Cada trazo es una raíz que plantas en el suelo de tu existencia.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

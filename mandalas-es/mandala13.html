@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Círculo de Piedras Druida</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Círculo de Piedras Druida</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala13.webp" alt="Mandala Círculo de Piedras Druida coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con sonidos de viento ancestral y cuencos de piedra para conectar con la sabiduría de los círculos megalíticos.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala13-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">Hace más de 4,000 años, en las colinas neblinosas de las islas británicas, los pueblos megalíticos alzaron círculos de piedra —como Stonehenge y Avebury— no como monumentos, sino como templos vivos. Para los druidas, estos círculos eran relojes cósmicos, altares de sanación y portales de comunicación con los espíritus de la tierra y el cielo. Cada piedra tenía un nombre, una voz, una función. El círculo no tenía principio ni fin: simbolizaba la eternidad del ciclo, la igualdad de todos los seres y la sacralidad del espacio compartido.</p>
+            
+            <p class="invitation-text">Apaga las luces. Enciende una vela. Imagina que estás de pie en el centro de un círculo de piedras antiguas, bajo un cielo lleno de estrellas. Respira y di en silencio: <strong>“Estoy en el centro. Estoy en casa.”</strong> Colorea cada piedra como un pilar de tu vida. Y deja el centro en blanco… o llénalo con el color de tu paz. No estás solo. La tierra te sostiene. El cielo te guía. Y el círculo te recuerda: siempre vuelves a ti.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

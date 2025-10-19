@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - The Menstrual Moon Mandala</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="WonderColoring Logo" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Sparking Imagination, One Shade at a Time</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Back to Collection
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">The Menstrual Moon Mandala</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala15.webp" alt="Colored Menstrual Moon Mandala" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Play Inspiring Music</span>
+                </button>
+                <p class="audio-description">Gentle music with feminine bowls and 528 Hz frequencies to honor the sacred menstrual cycle and lunar wisdom.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala15-relax.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">The Soul of This Mandala</h2>
+            <p class="soul-text">In Lascaux Cave (France) over 20,000 years ago, the first artists—women shamans—painted red dots in 29-day sequences: the world’s first lunar… and menstrual calendars. For Indigenous peoples worldwide—from Isis’s priestesses in Egypt to Mapuche women in Chile—menstruation wasn’t “impurity,” but sacred power: the time when a woman aligned with the dark moon and accessed visions and ancestral healing.</p>
+            
+            <p class="invitation-text">If you’re bleeding, color with warm hands. If not, imagine your womb pulsing with the moon. Breathe and whisper: <strong>“My body is wise. My cycle is sacred.”</strong> Use red, crimson, or purple for the center. Silver, gray, or white for the moons. Let the colors flow like tides. Don’t fight your darkness. That’s where the light is born.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Back to Collection</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pause Inspiring Music';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Play Inspiring Music';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio not available';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Finalización | WonderColoring</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body id="certificate-body">
+
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+
+    <main class="certificate-page-main">
+        <div class="info-section certificate-input-area">
+            <h2 class="animal-title">🎉 ¡Felicidades!</h2>
+            <p>Ingresa el nombre del artista que ha completado el libro de mandalas:</p>
+            <input type="text" id="artist-name-input" placeholder="Ej: Sofía, Mateo o tu nombre">
+            <button class="audio-button" onclick="generateCertificate()">
+                Generar Certificado
+            </button>
+        </div>
+        
+        <div id="certificate-display-area" style="display: none;">
+            <div class="certificate-print-container">
+                <img src="../../assets/images/certificate_background.webp" alt="Certificado WonderColoring" class="certificate-background-img">
+                <h1 id="printed-name" class="cert-name-overlay">...</h1>
+                <p id="printed-date" class="cert-date-overlay"></p>
+            </div>
+
+            <div style="text-align: center; margin: 20px 0;">
+                <button class="audio-button print-button" onclick="printCertificate()">
+                    🖨️ Imprimir / Descargar Certificado
+                </button>
+                <button class="audio-button" style="background-color: var(--color-taupe);" onclick="resetCertificate()">
+                    Cambiar Nombre
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyright-text">© 2025 Ideae. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function generateCertificate() {
+            const name = document.getElementById('artist-name-input').value.trim();
+            if (name) {
+                document.getElementById('printed-name').textContent = name;
+                
+                const date = new Date().toLocaleDateString('es-ES', { 
+                    day: 'numeric', 
+                    month: 'long', 
+                    year: 'numeric' 
+                });
+                document.getElementById('printed-date').textContent = date;
+
+                document.querySelector('.certificate-input-area').style.display = 'none';
+                document.getElementById('certificate-display-area').style.display = 'block';
+
+                localStorage.setItem('wondercoloring_name', name);
+            } else {
+                alert('Por favor, ingresa el nombre del artista.');
+            }
+        }
+
+        function printCertificate() {
+            window.print();
+        }
+
+        function resetCertificate() {
+            document.querySelector('.certificate-input-area').style.display = 'block';
+            document.getElementById('certificate-display-area').style.display = 'none';
+        }
+
+        window.onload = function() {
+            const savedName = localStorage.getItem('wondercoloring_name');
+            if (savedName) {
+                document.getElementById('artist-name-input').value = savedName;
+            }
+        };
+    </script>
+</body>
+</html>

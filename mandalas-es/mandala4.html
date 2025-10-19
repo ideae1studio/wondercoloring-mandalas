@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - El Triskel de los Tres Mundos</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="mandala-header">
+            <h1 class="mandala-title">El Triskel de los Tres Mundos</h1>
+        </section>
+        
+        <section class="mandala-image-container">
+            <img src="../../assets/images/mandala4.webp" alt="Mandala Triskel de los Tres Mundos coloreado" class="mandala-image">
+        </section>
+        
+        <section class="audio-section">
+            <div class="audio-controls">
+                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
+                    <span id="btnIcon">▶</span>
+                    <span id="btnText">Reproducir música inspiradora</span>
+                </button>
+                <p class="audio-description">Música suave con arpa celta y sonidos de la naturaleza para armonizar tus tres mundos: cuerpo, emociones y espíritu.</p>
+            </div>
+            <audio id="relaxAudio" loop>
+                <source src="../../assets/audio/mandala4-relax.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </section>
+        
+        <section class="meaning-section">
+            <h2 class="meaning-title">El alma de este mandala</h2>
+            <p class="soul-text">Tallado en piedras sagradas hace más de 2,500 años en Newgrange (Irlanda), el triskel —tres espirales entrelazadas— era el símbolo más sagrado de los pueblos celtas. Para los druidas, representaba el dinamismo sagrado: la vida como fluir constante entre fuerzas complementarias. En la cosmología celta, el universo se divide en tres mundos interconectados: el Terrenal, el del Mar (emocional) y el del Cielo (espiritual). Este mandala honra esa visión holística: equilibrio no como inmovilidad, sino como danza consciente.</p>
+            
+            <p class="invitation-text">Antes de comenzar, siéntate con la espalda recta. Lleva una mano al vientre, otra al corazón, y la frente en alto. Respira y di en silencio: <strong>“Que mis mundos interiores bailen en armonía.”</strong> Elige tres colores: uno para tu cuerpo, uno para tus emociones, y uno para tu espíritu. Deja que las espirales te recuerden: no necesitas detener la vida para encontrar paz. Solo necesitas moverte con conciencia.</p>
+        </section>
+        
+        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+    </main>
+    
+    <script>
+        const audio = document.getElementById('relaxAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                btnIcon.textContent = '⏸';
+                btnText.textContent = 'Pausar música inspiradora';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                btnIcon.textContent = '▶';
+                btnText.textContent = 'Reproducir música inspiradora';
+                playPauseBtn.classList.remove('playing');
+            }
+        }
+        
+        // Manejo de errores de audio
+        audio.addEventListener('error', () => {
+            btnText.textContent = 'Audio no disponible';
+            playPauseBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>
