@@ -17,7 +17,7 @@
                 <p class="slogan">Despierta la imaginación, un color a la vez</p>
             </div>
         </div>
-        <a href="../home.html" class="language-switcher">
+        <a href="home.html" class="language-switcher">
             🏠 Volver a la colección
         </a>
     </header>
@@ -32,17 +32,13 @@
         </section>
         
         <section class="audio-section">
-            <div class="audio-controls">
-                <button id="playPauseBtn" class="audio-button" onclick="toggleAudio()">
-                    <span id="btnIcon">▶</span>
-                    <span id="btnText">Reproducir música inspiradora</span>
-                </button>
-                <p class="audio-description">Música suave con sonidos de agua y cuencos tibetanos para acompañar tu meditación creativa.</p>
-            </div>
-            <audio id="relaxAudio" loop>
-                <source src="../../assets/audio/mandala1-relax.mp3" type="audio/mpeg">
-                Tu navegador no soporta audio.
-            </audio>
+            <button class="play-button" onclick="toggleVideo()">
+                <span>▶</span> Reproducir sonido relajante
+            </button>
+            <video id="relaxVideo" controls style="display: none;">
+                <source src="../../assets/videos/mandala1-relax.mp4" type="video/mp4">
+                Tu navegador no soporta video.
+            </video>
         </section>
         
         <section class="meaning-section">
@@ -52,34 +48,24 @@
             <p class="invitation-text">Antes de comenzar, coloca una mano sobre tu corazón y respira tres veces. Pregúntate en silencio: <strong>“¿Qué parte de mí está lista para florecer?”</strong> No pienses en cómo “debe” verse. Deja que tus colores respondan desde tu verdad. Recuerda: incluso en el lodo más profundo, tu alma ya es una flor.</p>
         </section>
         
-        <a href="../home.html" class="back-to-home">← Volver a la colección</a>
+        <a href="home.html" class="back-to-home">← Volver a la colección</a>
     </main>
     
     <script>
-        const audio = document.getElementById('relaxAudio');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const btnIcon = document.getElementById('btnIcon');
-        const btnText = document.getElementById('btnText');
-        
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-                btnIcon.textContent = '⏸';
-                btnText.textContent = 'Pausar música inspiradora';
-                playPauseBtn.classList.add('playing');
+        function toggleVideo() {
+            const video = document.getElementById('relaxVideo');
+            const button = document.querySelector('.play-button');
+            
+            if (video.style.display === 'none') {
+                video.style.display = 'block';
+                button.innerHTML = '<span>⏸</span> Pausar sonido';
+                video.play();
             } else {
-                audio.pause();
-                btnIcon.textContent = '▶';
-                btnText.textContent = 'Reproducir música inspiradora';
-                playPauseBtn.classList.remove('playing');
+                video.pause();
+                video.style.display = 'none';
+                button.innerHTML = '<span>▶</span> Reproducir sonido relajante';
             }
         }
-        
-        // Manejo de errores de audio
-        audio.addEventListener('error', () => {
-            btnText.textContent = 'Audio no disponible';
-            playPauseBtn.disabled = true;
-        });
     </script>
 </body>
 </html>

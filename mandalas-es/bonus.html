@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderColoring - Páginas Extra para Colorear</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <style>
+        /* Estilos específicos para la página de bonus */
+        .bonus-section {
+            background-color: var(--color-beige);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .bonus-item {
+            background: white;
+            border: 2px solid var(--color-pink-dust);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .bonus-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-terracotta);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .bonus-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid var(--color-beige);
+        }
+        
+        .bonus-item h3 {
+            color: var(--color-terracotta);
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        
+        .bonus-item p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: var(--color-brown);
+        }
+        
+        .download-button {
+            display: inline-block;
+            background: var(--color-terracotta);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-terracotta);
+        }
+        
+        .download-button:hover {
+            background: var(--color-pink-dust);
+            color: var(--color-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(161, 32, 71, 0.3);
+        }
+        
+        .extra-resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .resource-card {
+            background: white;
+            border: 2px solid var(--color-gold);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-card h3 {
+            color: var(--color-gold);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .resource-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid var(--color-beige);
+        }
+        
+        .tips-list {
+            text-align: left;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .tips-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-container">
+            <div class="logo-wrapper">
+                <img src="../../assets/images/logo.webp" alt="Logo de WonderColoring" class="site-logo">
+            </div>
+            <div class="brand-text">
+                <h1>WonderColoring</h1>
+                <p class="slogan">Despierta la imaginación, un color a la vez</p>
+            </div>
+        </div>
+        <a href="../home.html" class="language-switcher">
+            🏠 Volver a la colección
+        </a>
+    </header>
+    
+    <main>
+        <section class="bonus-section">
+            <h2 class="animal-title">🎁 Páginas Extra para Colorear</h2>
+            <p>Descubre estos mandalas exclusivos diseñados especialmente para profundizar en tu viaje creativo y espiritual.</p>
+            
+            <div class="bonus-grid">
+                <div class="bonus-item">
+                    <img src="../../assets/images/thumbnails/mandalath22.webp" alt="Mandala Pentáculo Celta de los Elementos">
+                    <h3>El Pentáculo Celta de los Elementos</h3>
+                    <p>Para los druidas y pueblos celtas, el universo no era caos, sino orden sagrado. Todo surgía de la danza de cinco fuerzas primordiales: Tierra, Agua, Fuego, Aire y Espíritu.</p>
+                    <a href="../../assets/downloads/mandala22-printable.pdf" class="download-button" download>
+                        📥 Descargar PDF
+                    </a>
+                </div>
+                
+                <div class="bonus-item">
+                    <img src="../../assets/images/thumbnails/mandalath23.webp" alt="Mandala Ojo del Tercer Viento">
+                    <h3>El Ojo del Tercer Viento</h3>
+                    <p>En las alturas de los Andes, el tercer viento —el más sutil— es el Wayra Yupay, el “Viento de la Visión”, que sopla desde el este al amanecer y despeja la niebla del corazón y la mente.</p>
+                    <a href="../../assets/downloads/mandala23-printable.pdf" class="download-button" download>
+                        📥 Descargar PDF
+                    </a>
+                </div>
+                
+                <div class="bonus-item">
+                    <img src="../../assets/images/thumbnails/mandalath24.webp" alt="Mandala Madre Tierra Pachamama">
+                    <h3>El Mandala de la Madre Tierra Pachamama</h3>
+                    <p>Para los pueblos Quechua, Aymara y otras naciones andinas, Pachamama no es una metáfora: es una presencia viva, consciente, generosa y exigente.</p>
+                    <a href="../../assets/downloads/mandala24-printable.pdf" class="download-button" download>
+                        📥 Descargar PDF
+                    </a>
+                </div>
+                
+                <div class="bonus-item">
+                    <img src="../../assets/images/thumbnails/mandalath25.webp" alt="Mandala Laberinto del Corazón Inca">
+                    <h3>El Laberinto del Corazón Inca</h3>
+                    <p>En el corazón del Tawantinsuyo, los incas enseñaban que el corazón (yuyay) era el lugar donde se encontraban la razón y la emoción, el deber y el deseo.</p>
+                    <a href="../../assets/downloads/mandala25-printable.pdf" class="download-button" download>
+                        📥 Descargar PDF
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bonus-section">
+            <h2 class="animal-title">🎨 Recursos Extra para tu Viaje Creativo</h2>
+            <p>Material adicional para inspirarte y profundizar en la experiencia de colorear mandalas.</p>
+            
+            <div class="extra-resources">
+                <div class="resource-card">
+                    <img src="../../assets/images/bonus/color-guide.webp" alt="Guía de Colores para Mandalas">
+                    <h3>Guía de Colores Sagrados</h3>
+                    <p>Descubre el significado espiritual de los colores y cómo elegirlos intuitivamente para cada mandala.</p>
+                    <a href="../../assets/downloads/color-guide.pdf" class="download-button" download>
+                        📥 Descargar Guía
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <img src="../../assets/images/bonus/meditation-guide.webp" alt="Guía de Meditación con Mandalas">
+                    <h3>Meditación Guiada</h3>
+                    <p>Aprende a usar los mandalas como herramienta de meditación para calmar la mente y abrir el corazón.</p>
+                    <a href="../../assets/downloads/meditation-guide.pdf" class="download-button" download>
+                        📥 Descargar Guía
+                    </a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: var(--color-base); border-radius: 10px;">
+                <h3 style="color: var(--color-terracotta); text-align: center; margin-bottom: 15px;">💡 Consejos para Colorear con Intención</h3>
+                <ul class="tips-list">
+                    <li><strong>Crea un espacio sagrado:</strong> Enciende una vela, pon música suave y elimina distracciones.</li>
+                    <li><strong>Respira antes de comenzar:</strong> Toma tres respiraciones profundas para centrarte.</li>
+                    <li><strong>Deja que los colores elijan:</strong> No pienses demasiado. Deja que tu intuición guíe tu mano.</li>
+                    <li><strong>Honra tu proceso:</strong> No hay errores, solo expresiones únicas de tu alma.</li>
+                    <li><strong>Comparte tu experiencia:</strong> Toma una foto de tu mandala terminado y compártela con alguien especial.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p style="text-align: center; font-size: 0.8em; margin-top: 50px; color: var(--color-taupe);">&copy; 2025 Ideae. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

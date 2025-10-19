@@ -155,9 +155,8 @@ main {
     height: auto;
     display: block;
 }
-
 /* ======================================================= */
-/* 5. AUDIO CONTROLS - MEJORADOS Y ATRACTIVOS             */
+/* ESTILOS ACTUALIZADOS PARA AUDIO - MÁS ATRACTIVOS       */
 /* ======================================================= */
 .audio-section {
     text-align: center;
@@ -223,10 +222,6 @@ main {
     margin: 0;
     font-style: italic;
 }
-
-/* ======================================================= */
-/* 6. MEANING SECTION - TEXTO EXPLICATIVO                 */
-/* ======================================================= */
 .meaning-section {
     background-color: var(--color-beige);
     padding: 30px;
@@ -280,8 +275,17 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+video {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 /* ======================================================= */
-/* 7. HERO SECTION - MANDALAS LANDING                      */
+/* 5. HERO SECTION - MANDALAS LANDING                      */
 /* ======================================================= */
 .hero {
     text-align: center;
@@ -342,7 +346,7 @@ main {
 }
 
 /* ======================================================= */
-/* 8. INFO SECTIONS & COLLECTION GRID                      */
+/* 6. INFO SECTIONS & COLLECTION GRID                      */
 /* ======================================================= */
 .info-section {
     background-color: var(--color-beige);
@@ -415,7 +419,7 @@ main {
 }
 
 /* ======================================================= */
-/* 9. FUTURE COLLECTIONS PREVIEW                           */
+/* 7. FUTURE COLLECTIONS PREVIEW                           */
 /* ======================================================= */
 .preview-reel-container {
     display: grid;
@@ -467,7 +471,7 @@ main {
 }
 
 /* ======================================================= */
-/* 10. LANGUAGE LANDING PAGE (INDEX.HTML)                  */
+/* 8. LANGUAGE LANDING PAGE (INDEX.HTML)                   */
 /* ======================================================= */
 .language-landing {
     background-color: var(--color-brown);
@@ -567,7 +571,7 @@ main {
 }
 
 /* ======================================================= */
-/* 11. FOOTER                                              */
+/* 9. FOOTER                                               */
 /* ======================================================= */
 footer {
     text-align: center;
@@ -580,7 +584,7 @@ footer p {
 }
 
 /* ======================================================= */
-/* 12. RESPONSIVE DESIGN - MOBILE OPTIMIZATION             */
+/* 10. RESPONSIVE DESIGN - MOBILE OPTIMIZATION             */
 /* ======================================================= */
 @media (max-width: 768px) {
     .navbar {
@@ -622,14 +626,9 @@ footer p {
         gap: 20px;
     }
     
-    .audio-button {
-        padding: 14px 30px;
-        font-size: 1.2em;
-        min-width: 280px;
-    }
-    
-    .mandala-image-container {
-        margin: 20px 0;
+    .play-button {
+        padding: 12px 25px;
+        font-size: 1.1em;
     }
 }
 
@@ -658,11 +657,5 @@ footer p {
     
     .grid-link h4 {
         font-size: 0.85em;
-    }
-    
-    .audio-button {
-        min-width: 250px;
-        padding: 12px 25px;
-        font-size: 1.1em;
     }
 }
