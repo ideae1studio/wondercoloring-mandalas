@@ -31,15 +31,19 @@
             <img src="../../assets/images/mandala1.webp" alt="Mandala Loto coloreado" class="mandala-image">
         </section>
         
-        <section class="audio-section">
-            <button class="play-button" onclick="toggleVideo()">
-                <span>▶</span> Reproducir sonido relajante
-            </button>
-            <video id="relaxVideo" controls style="display: none;">
-                <source src="../../assets/videos/mandala1-relax.mp4" type="video/mp4">
-                Tu navegador no soporta video.
-            </video>
-        </section>
+       <section class="audio-section">
+    <div class="audio-controls">
+        <button id="playPauseBtn" class="audio-button" onclick="toggleVideo()">
+            <span id="btnIcon">▶</span>
+            <span id="btnText">Reproducir sonido relajante</span>
+        </button>
+        <p class="audio-description">Video con sonidos relajantes para acompañar tu meditación creativa.</p>
+    </div>
+    <video id="relaxVideo" style="display: none;">
+        <source src="../../assets/videos/mandala1-relax.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+    </video>
+</section>
         
         <section class="meaning-section">
             <h2 class="meaning-title">El alma de este mandala</h2>
@@ -51,21 +55,41 @@
         <a href="home.html" class="back-to-home">← Volver a la colección</a>
     </main>
     
-    <script>
-        function toggleVideo() {
-            const video = document.getElementById('relaxVideo');
-            const button = document.querySelector('.play-button');
-            
-            if (video.style.display === 'none') {
-                video.style.display = 'block';
-                button.innerHTML = '<span>⏸</span> Pausar sonido';
-                video.play();
-            } else {
-                video.pause();
-                video.style.display = 'none';
-                button.innerHTML = '<span>▶</span> Reproducir sonido relajante';
-            }
+   <script>
+    const video = document.getElementById('relaxVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const btnIcon = document.getElementById('btnIcon');
+    const btnText = document.getElementById('btnText');
+
+    function toggleVideo() {
+        if (video.paused) {
+            video.play();
+            btnIcon.textContent = '⏸';
+            btnText.textContent = 'Pausar sonido relajante';
+            playPauseBtn.classList.add('playing');
+            video.style.display = 'block';
+        } else {
+            video.pause();
+            btnIcon.textContent = '▶';
+            btnText.textContent = 'Reproducir sonido relajante';
+            playPauseBtn.classList.remove('playing');
+            video.style.display = 'none';
         }
-    </script>
+    }
+
+    // Manejo de errores de video
+    video.addEventListener('error', () => {
+        btnText.textContent = 'Video no disponible';
+        playPauseBtn.disabled = true;
+    });
+
+    // Cuando el video termina, resetear el botón
+    video.addEventListener('ended', () => {
+        btnIcon.textContent = '▶';
+        btnText.textContent = 'Reproducir sonido relajante';
+        playPauseBtn.classList.remove('playing');
+        video.style.display = 'none';
+    });
+</script>
 </body>
 </html>
